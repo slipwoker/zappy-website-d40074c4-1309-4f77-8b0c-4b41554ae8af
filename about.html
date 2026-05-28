@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Meet the Intuitive Guide Behind Your Healing — The Sacred Seer Toni Love</title>
+    <meta name="description" content="Discover how Toni Love&#39;s Holy Spirit-led gifts of angelic insight and energy healing have transformed lives. Your journey to new vision and spiritual living begins with her sacred story.">
+    <meta name="keywords" content="new vision center for spiritual living, intuitive healer Milford, Holy Spirit-led readings, spiritual awakening guide, woman-owned spiritual business">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: 'd40074c4-1309-4f77-8b0c-4b41554ae8af',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <meta property="og:title" content="Meet the Intuitive Guide Behind Your Healing — The Sacred Seer Toni Love">
+    <meta property="og:description" content="Discover how Toni Love&#39;s Holy Spirit-led gifts of angelic insight and energy healing have transformed lives. Your journey to new vision and spiritual living begins with her sacred story.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Meet the Intuitive Guide Behind Your Healing — The Sacred Seer Toni Love">
+    <meta name="twitter:description" content="Discover how Toni Love&#39;s Holy Spirit-led gifts of angelic insight and energy healing have transformed lives. Your journey to new vision and spiritual living begins with her sacred story.">
+    <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .skip-link { position: absolute; top: 0; left: 0; transform: translateY(-200%); padding: 12px 18px; background: var(--bg-dark, #1a1a1a); color: var(--text-light, #fff); font-weight: 600; border-radius: 0 0 8px 0; z-index: 10000; }
+    .skip-link:focus { transform: none; outline: 2px solid var(--ring, #fff); outline-offset: 2px; }
+    :focus-visible { outline: 2px solid var(--ring, currentColor); outline-offset: 3px; }
+  </style>
+
+
+  
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css">
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <script>window.ZAPPY_WEBSITE_ID = "d40074c4-1309-4f77-8b0c-4b41554ae8af"; window.ZAPPY_API_BASE = "https://api.zappy5.com";</script>
+
+    <style id="zappy-dropdown-submenu-styles">
+      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
+      /* Base styles for dropdown submenus - parent must be positioned */
+      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
+      /* Submenu base - hidden by default */
+      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
+      /* CRITICAL: Desktop hover styles to show dropdown */
+      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Submenu item styling */
+      .sub-menu li { list-style: none; margin: 0; padding: 0; }
+      .sub-menu a { display: block !important; padding: 10px 16px !important; color: var(--text-dark, #333) !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
+      .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
+      [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 10px !important; padding-right: 28px !important; }
+      .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
+      .sub-menu a:hover { background-color: #f5f5f5; }
+      /* RTL (Hebrew/Arabic) dropdown positioning */
+      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
+      /* Hide empty dropdown menus (exclude catalog sub-menus that use <a> children instead of <li>) */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))):not(:has(> a)), .sub-menu:not(:has(li)):not(:has(> a)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Desktop: show submenu on Menu Group hover */
+      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Menu Group title styling */
+      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
+      
+      /* ========== MOBILE SUBMENU STYLES ========== */
+      @media (max-width: 768px) {
+        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
+        .navbar .sub-menu.mobile-expanded, .nav-menu .sub-menu.mobile-expanded, #navMenu .sub-menu.mobile-expanded { max-height: none !important; overflow-y: visible !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
+        /* Disable hover behavior on mobile */
+        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
+        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
+        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; position: relative !important; min-height: 44px !important; }
+        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; min-width: 0 !important; }
+        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; min-width: 0 !important; padding: 0 !important; line-height: inherit !important; }
+        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
+        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
+        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: auto !important; background: transparent !important; border: none !important; cursor: pointer !important; color: var(--text-dark) !important; position: static !important; flex-shrink: 0 !important; align-self: stretch !important; z-index: 2 !important; padding: 0 !important; margin: 0 !important; }
+        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
+        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
+        .sub-menu a { padding: 10px 0 !important; display: block !important; color: var(--text-dark) !important; white-space: normal !important; }
+        .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
+        [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 0 !important; padding-right: 28px !important; }
+        .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
+        .nav-menu.active, #navMenu.active { max-width: 100vw !important; overflow-x: hidden !important; box-sizing: border-box !important; }
+        .navbar .sub-menu li a, nav.navbar .sub-menu li a, .zappy-products-dropdown .sub-menu a { color: var(--text-dark) !important; }
+      }
+      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
+    </style>
+
+    <style id="zappy-widget-visibility">
+      html[dir="rtl"] .whatsapp-float { right: 20px !important; left: auto !important; }
+      html[dir="ltr"] .whatsapp-float, html:not([dir]) .whatsapp-float { left: 20px !important; right: auto !important; }
+      html[dir="rtl"] #mic-access-tool-general-button, html[dir="rtl"] .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="rtl"] ._access-icon { left: 20px !important; right: auto !important; }
+      html[dir="ltr"] #mic-access-tool-general-button, html[dir="ltr"] .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="ltr"] ._access-icon,
+      html:not([dir]) #mic-access-tool-general-button, html:not([dir]) .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool #mic-access-tool-general-button,
+      html:not([dir]) ._access-icon { right: 20px !important; left: auto !important; }
+      @media (max-width: 768px) { .whatsapp-float { display: flex !important; } }
+      @media (min-width: 769px) { .whatsapp-float { display: flex !important; } }
+      @media (max-width: 768px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon { display: flex !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; }
+        #mic-access-tool-box.opened-mic-access-tool, .mic-access-tool-box.opened-mic-access-tool,
+        #mic-init-access-tool #mic-access-tool-box.opened-mic-access-tool {
+          visibility: visible !important; opacity: 1 !important; pointer-events: auto !important;
+        }
+      }
+      @media (min-width: 769px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon { display: flex !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; }
+        #mic-access-tool-box.opened-mic-access-tool, .mic-access-tool-box.opened-mic-access-tool,
+        #mic-init-access-tool #mic-access-tool-box.opened-mic-access-tool {
+          visibility: visible !important; opacity: 1 !important; pointer-events: auto !important;
+        }
+      }
+    </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+  <nav class="navbar">
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+    <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+  </button>
+
+  <button class="phone-header-btn" data-phone="" aria-label="Call">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+  </button>
+
+  <div class="nav-container">
+    <div class="nav-brand">
+      <a href="/" class="logo-link"><img class="logo" src="/assets/site-about-image-1.webp" alt="The Sacred Seer Toni Love"></a>
+    </div>
+
+    <ul class="nav-menu" id="navMenu"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/services">Services</a></li></ul>
+
+    <div class="nav-cta-container">
+      <a href="/contact" class="nav-cta-btn">Contact</a>
+    </div>
+  </div>
+</nav>
+<script>
+
+// Navbar Mobile Menu Toggle and Contrast Fix
+(function() {
+  // Use 'load' event instead of 'DOMContentLoaded' to ensure we run AFTER all other scripts
+  window.addEventListener('load', function() {
+    
+    // FIX MOBILE BUTTON CONTRAST
+    // Detect navbar background color and apply contrasting color to mobile buttons
+    const navbar = document.querySelector('.navbar, nav, header');
+    if (!navbar) {
+      console.log('[Navbar] Navbar element not found');
+      return;
+    }
+    
+    // DECLARE VARIABLES EARLY to avoid Temporal Dead Zone errors
+    // These are used in multiple places below
+    let mobileToggle = document.getElementById('mobileToggle') ||
+                       document.querySelector('.mobile-toggle') ||
+                       document.querySelector('.hamburger') ||
+                       document.querySelector('.hamburger-menu') ||
+                       document.querySelector('.menu-toggle') ||
+                       document.querySelector('.burger-menu') ||
+                       document.querySelector('[aria-label="Menu"]') ||
+                       document.querySelector('[aria-label="תפריט"]');
+    
+    const phoneBtn = document.querySelector('.phone-header-btn');
+    
+    const computedStyle = window.getComputedStyle(navbar);
+    let bgColor = computedStyle.backgroundColor;
+    
+    console.log('[Navbar] Initial navbar background:', bgColor);
+    
+    // Check if background is transparent or rgba with 0 alpha
+    const isTransparent = bgColor === 'transparent' || 
+                         bgColor === 'rgba(0, 0, 0, 0)' ||
+                         (bgColor.startsWith('rgba') && bgColor.includes(', 0)'));
+    
+    if (isTransparent) {
+      // Check for background-image or gradient
+      const bgImage = computedStyle.backgroundImage;
+      if (bgImage && bgImage !== 'none') {
+        console.log('[Navbar] Navbar has background image/gradient, using dark text');
+        bgColor = 'rgb(240, 240, 240)'; // Assume light background
+      } else {
+        // Transparent navbar - check body background
+        const bodyBg = window.getComputedStyle(document.body).backgroundColor;
+        console.log('[Navbar] Navbar transparent, using body background:', bodyBg);
+        bgColor = bodyBg;
+      }
+    }
+    
+    // Calculate luminance to determine if background is light or dark
+    const rgb = bgColor.match(/\d+/g);
+    if (rgb && rgb.length >= 3) {
+      const r = parseInt(rgb[0]);
+      const g = parseInt(rgb[1]);
+      const b = parseInt(rgb[2]);
+      const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      
+      // Mobile button colors are set by Claude's AI-generated CSS (same as .nav-menu a)
+      // No dynamic color overrides needed - colors come from the generated navbar CSS
+      console.log('[Navbar] Mobile button colors preserved from Claude CSS (luminance:', luminance.toFixed(2) + ')');
+      
+      // FIX ICON SIZES - Ensure SVGs are properly sized and visible
+      // INJECT CRITICAL CSS TO OVERRIDE ANY CONFLICTING RULES
+      const criticalCSS = document.createElement('style');
+      criticalCSS.id = 'zappy-mobile-nav-fix';
+      const htmlLang = document.documentElement.lang || 'en';
+      const htmlDir = document.documentElement.dir || 'ltr';
+      // Check both dir attribute AND lang for RTL detection
+      // dir="rtl" is the most reliable indicator
+      const isRTL = htmlDir === 'rtl' || htmlLang === 'he' || htmlLang === 'ar';
+      
+      criticalCSS.textContent = `
+        /* Hide mobile buttons on desktop, show only on mobile */
+        @media (min-width: 769px) {
+          .mobile-toggle,
+          .phone-header-btn {
+            display: none !important;
+          }
+        }
+        
+        /* Show and position mobile buttons correctly on mobile */
+        @media (max-width: 768px) {
+          .navbar,
+          nav.navbar {
+            min-height: 70px !important;
+          }
+
+          .mobile-toggle,
+          .phone-header-btn {
+            position: absolute !important;
+            top: 0 !important;
+            bottom: 0 !important;
+            margin-top: auto !important;
+            margin-bottom: auto !important;
+            transform: none !important;
+            z-index: 1001 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 36px !important;
+            height: 36px !important;
+            border-radius: 50% !important;
+            border: none !important;
+            cursor: pointer !important;
+            padding: 6px !important;
+            background: none !important;
+            color: var(--nav-text, var(--text-dark)) !important;
+            touch-action: manipulation !important;
+            -webkit-tap-highlight-color: transparent !important;
+          }
+
+          html[data-zappy-site-type="ecommerce"] .phone-header-btn,
+          body[data-zappy-site-type="ecommerce"] .phone-header-btn,
+          html[data-zappy-site-type="ecommerce"] header .phone-header-btn,
+          html[data-zappy-site-type="ecommerce"] nav .phone-header-btn {
+            display: none !important;
+            visibility: hidden !important;
+            width: 0 !important;
+            height: 0 !important;
+            min-width: 0 !important;
+            overflow: hidden !important;
+          }
+          
+          /* LTR positioning (default): hamburger LEFT, phone RIGHT */
+          html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .mobile-toggle,
+          html[dir="ltr"] .mobile-toggle {
+            left: 12px !important;
+            right: auto !important;
+          }
+          html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .phone-header-btn,
+          html[dir="ltr"] .phone-header-btn {
+            right: 12px !important;
+            left: auto !important;
+          }
+          
+          /* RTL positioning: hamburger RIGHT, phone LEFT */
+          html[dir="rtl"] .mobile-toggle,
+          html[lang="he"] .mobile-toggle,
+          html[lang="ar"] .mobile-toggle {
+            right: 12px !important;
+            left: auto !important;
+          }
+          html[dir="rtl"] .phone-header-btn,
+          html[lang="he"] .phone-header-btn,
+          html[lang="ar"] .phone-header-btn {
+            left: 12px !important;
+            right: auto !important;
+          }
+          
+          /* CRITICAL: Ensure nav-container has min-height on mobile */
+          /* All children are positioned absolutely/fixed on mobile, so height:auto collapses to 0 */
+          .nav-container {
+            min-height: 70px !important;
+            position: relative !important;
+          }
+          
+          /* Ensure SVG icons are properly sized and inherit color */
+          .mobile-toggle svg,
+          .phone-header-btn svg {
+            width: 24px !important;
+            height: 24px !important;
+            /* Don't force display - let JavaScript control hamburger/close toggle */
+          }
+          
+          /* Reset nav-cta-container on mobile - remove desktop box-shadow/padding */
+          /* that creates a visible ghost box when CTA button is hidden */
+          .nav-cta-container {
+            box-shadow: none !important;
+            padding: 0 !important;
+          }
+          
+          /* Hide nav-cta-container entirely on mobile when there's no lang-switcher */
+          /* (only the CTA button is inside, and it's hidden on mobile) */
+          .nav-cta-container:not(:has(.lang-switcher)) {
+            display: none !important;
+          }
+          
+          /* CRITICAL: Prevent hero image fade gradient from bleeding over headline text */
+          /* The .image-fade-gradient has bottom: -30px (extends below parent) */
+          /* On mobile stacked layout, this overlaps the h1 text below the image */
+          .hero-image-column {
+            overflow: hidden !important;
+          }
+          .image-fade-gradient {
+            bottom: 0 !important;
+          }
+          
+          /* Hide desktop language switcher on mobile - hamburger menu handles it */
+          /* High specificity to override stored CSS */
+          .lang-switcher,
+          .nav-cta-container .lang-switcher,
+          .nav-container .lang-switcher,
+          .navbar .lang-switcher,
+          .navbar .nav-cta-container .lang-switcher {
+            display: none !important;
+          }
+        }
+      `;
+      
+      // Remove existing fix if present and inject new one
+      const existing = document.getElementById('zappy-mobile-nav-fix');
+      if (existing) existing.remove();
+      document.head.appendChild(criticalCSS);
+      
+      console.log('[Navbar] Critical CSS injected for mobile nav positioning');
+      
+      // ONLY apply inline positioning styles on mobile viewport
+      // On desktop, the CSS handles hiding these buttons with display: none
+      // Inline styles were breaking desktop layout by overriding CSS
+      const isMobileViewport = window.innerWidth <= 768;
+      
+      if (mobileToggle) {
+        // Icon sizing applies to all viewports for consistency
+        const hamburgerIcon = mobileToggle.querySelector('.hamburger-icon');
+        const closeIcon = mobileToggle.querySelector('.close-icon');
+        
+        if (hamburgerIcon) {
+          hamburgerIcon.style.setProperty('width', '24px', 'important');
+          hamburgerIcon.style.setProperty('height', '24px', 'important');
+          hamburgerIcon.style.setProperty('display', 'block', 'important'); // Show hamburger by default
+        }
+        if (closeIcon) {
+          closeIcon.style.setProperty('width', '24px', 'important');
+          closeIcon.style.setProperty('height', '24px', 'important');
+          closeIcon.style.setProperty('display', 'none', 'important'); // Hide close icon by default
+        }
+        
+        // ONLY set positioning inline styles on mobile
+        if (isMobileViewport) {
+          mobileToggle.style.setProperty('position', 'absolute', 'important');
+          mobileToggle.style.setProperty('top', '0', 'important');
+          mobileToggle.style.setProperty('bottom', '0', 'important');
+          mobileToggle.style.setProperty('margin-top', 'auto', 'important');
+          mobileToggle.style.setProperty('margin-bottom', 'auto', 'important');
+          mobileToggle.style.setProperty('transform', 'none', 'important');
+          mobileToggle.style.setProperty('z-index', '1001', 'important');
+          
+          // Clear any inline left/right so CSS can take over based on html[dir]
+          mobileToggle.style.removeProperty('left');
+          mobileToggle.style.removeProperty('right');
+          
+          console.log('[Navbar] Mobile toggle positioning applied (mobile viewport)');
+        } else {
+          // On desktop, clear any positioning styles to let CSS handle it
+          mobileToggle.style.removeProperty('position');
+          mobileToggle.style.removeProperty('top');
+          mobileToggle.style.removeProperty('transform');
+          mobileToggle.style.removeProperty('z-index');
+          mobileToggle.style.removeProperty('left');
+          mobileToggle.style.removeProperty('right');
+          console.log('[Navbar] Desktop viewport - cleared mobile toggle inline positioning');
+        }
+      }
+      
+      if (phoneBtn) {
+        // Icon sizing applies to all viewports
+        const phoneIcon = phoneBtn.querySelector('svg');
+        if (phoneIcon) {
+          phoneIcon.style.width = '24px';
+          phoneIcon.style.height = '24px';
+          phoneIcon.setAttribute('width', '24');
+          phoneIcon.setAttribute('height', '24');
+        }
+        
+        // ONLY set positioning inline styles on mobile
+        if (isMobileViewport) {
+          phoneBtn.style.setProperty('position', 'absolute', 'important');
+          phoneBtn.style.setProperty('top', '0', 'important');
+          phoneBtn.style.setProperty('bottom', '0', 'important');
+          phoneBtn.style.setProperty('margin-top', 'auto', 'important');
+          phoneBtn.style.setProperty('margin-bottom', 'auto', 'important');
+          phoneBtn.style.setProperty('transform', 'none', 'important');
+          phoneBtn.style.setProperty('z-index', '1001', 'important');
+          
+          // Clear any inline left/right so CSS can take over based on html[dir]
+          phoneBtn.style.removeProperty('left');
+          phoneBtn.style.removeProperty('right');
+          
+          console.log('[Navbar] Phone button positioning applied (mobile viewport)');
+        } else {
+          // On desktop, clear any positioning styles to let CSS handle it
+          phoneBtn.style.removeProperty('position');
+          phoneBtn.style.removeProperty('top');
+          phoneBtn.style.removeProperty('transform');
+          phoneBtn.style.removeProperty('z-index');
+          phoneBtn.style.removeProperty('left');
+          phoneBtn.style.removeProperty('right');
+          console.log('[Navbar] Desktop viewport - cleared phone button inline positioning');
+        }
+      }
+    } else {
+      console.log('[Navbar] Could not parse background color:', bgColor);
+    }
+    
+    // MOBILE MENU TOGGLE
+    // Re-query in case DOM changed (mobileToggle already declared at top of function)
+    mobileToggle = document.getElementById('mobileToggle') ||
+                   document.querySelector('.mobile-toggle') ||
+                   document.querySelector('.hamburger') ||
+                   document.querySelector('.hamburger-menu') ||
+                   document.querySelector('.menu-toggle') ||
+                   document.querySelector('.burger-menu') ||
+                   document.querySelector('[aria-label="Menu"]') ||
+                   document.querySelector('[aria-label="תפריט"]');
+    
+    // EXPANDED SEARCH: Find nav menu by ID or class
+    const navMenu = document.getElementById('navMenu') ||
+                  document.querySelector('.nav-menu') ||
+                  document.querySelector('.nav-links') ||
+                  document.querySelector('nav ul:not(.submenu)');
+    
+    if (!mobileToggle || !navMenu) {
+      console.log('[Navbar] Mobile toggle or menu not found:', { toggle: !!mobileToggle, menu: !!navMenu });
+      return;
+    }
+    
+    // Ensure navMenu has ID for CSS targeting
+    if (!navMenu.id) {
+      navMenu.id = 'navMenu';
+    }
+    
+    console.log('[Navbar] Initializing mobile menu...');
+    
+    // Remove any existing event listeners by cloning the button
+    const newToggle = mobileToggle.cloneNode(true);
+    mobileToggle.parentNode.replaceChild(newToggle, mobileToggle);
+    
+    // Toggle menu handler (shared by click and touchend)
+    function handleToggle(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const hamburgerIcon = newToggle.querySelector('.hamburger-icon');
+      const closeIcon = newToggle.querySelector('.close-icon');
+      const isActive = navMenu.classList.contains('active');
+      
+      if (isActive) {
+        // Close menu
+        navMenu.classList.remove('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+        console.log('[Navbar] Menu closed');
+      } else {
+        // Open menu
+        navMenu.classList.add('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'none', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'block', 'important');
+        document.body.style.overflow = 'hidden';
+        console.log('[Navbar] Menu opened');
+      }
+    }
+    
+    // Use click for desktop/emulation and touchend as iOS Safari fallback.
+    // Prevent double-fire with a timestamp guard.
+    var lastToggleTime = 0;
+    function guardedToggle(e) {
+      var now = Date.now();
+      if (now - lastToggleTime < 300) return;
+      lastToggleTime = now;
+      handleToggle(e);
+    }
+    
+    newToggle.addEventListener('click', guardedToggle);
+    newToggle.addEventListener('touchend', guardedToggle);
+    
+    // Close menu when clicking nav links (but NOT dropdown toggles)
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        // Don't close if it's a dropdown child (unless it's a real navigation link)
+        if (this.getAttribute('href') === '#') return;
+        
+        const hamburgerIcon = newToggle.querySelector('.hamburger-icon');
+        const closeIcon = newToggle.querySelector('.close-icon');
+        
+        navMenu.classList.remove('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+        console.log('[Navbar] Menu closed (link clicked)');
+      });
+    });
+    
+    // DROPDOWN MENU TOGGLE (for mobile and touch devices)
+    var dropdownToggles = navMenu.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var parent = this.closest('.nav-dropdown');
+        if (!parent) return;
+        
+        // Close other open dropdowns at the same level
+        var siblings = parent.parentNode.querySelectorAll('.nav-dropdown.open');
+        siblings.forEach(function(sib) {
+          if (sib !== parent) sib.classList.remove('open');
+        });
+        
+        parent.classList.toggle('open');
+        console.log('[Navbar] Dropdown toggled:', parent.classList.contains('open') ? 'open' : 'closed');
+      });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        var openDropdowns = document.querySelectorAll('.nav-dropdown.open');
+        openDropdowns.forEach(function(dd) { dd.classList.remove('open'); });
+      }
+    });
+    
+    console.log('[Navbar] Dropdown handlers initialized for ' + dropdownToggles.length + ' dropdowns');
+    
+    // Phone button functionality (phoneBtn already declared at top of function)
+    if (phoneBtn) {
+      phoneBtn.addEventListener('click', function() {
+        // Get phone number from placeholder in page or use default
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        const phoneNumber = phoneLinks.length > 0 
+          ? phoneLinks[0].getAttribute('href').replace('tel:', '')
+          : '[business_phone]';
+        
+        window.location.href = 'tel:' + phoneNumber;
+        console.log('[Navbar] Phone button clicked');
+      });
+    }
+    
+    console.log('[Navbar] Mobile menu initialized successfully');
+    
+    // WhatsApp button visibility is now controlled via CSS (siteSettings).
+    // No JS-based desktop hiding — the button is visible on both mobile and desktop by default.
+  });
+})();
+
+</script>
+  
+  <main id="main">
+    <section class="about-intro-section" data-layout-spec="About-intro">
+
+  <!-- Celestial haze background decoration -->
+  <div class="about-intro-celestial-haze" aria-hidden="true"></div>
+
+  <!-- Decorative sacred geometry top ornament -->
+  <div class="about-intro-geo-top" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" width="120" height="120">
+      <circle cx="60" cy="60" r="52" stroke="#C9A24E" stroke-width="0.7" stroke-opacity="0.35"></circle>
+      <circle cx="60" cy="60" r="38" stroke="#C9A24E" stroke-width="0.5" stroke-opacity="0.25"></circle>
+      <circle cx="60" cy="60" r="24" stroke="#C9A24E" stroke-width="0.5" stroke-opacity="0.2"></circle>
+      <line x1="60" y1="8" x2="60" y2="112" stroke="#C9A24E" stroke-width="0.5" stroke-opacity="0.2"></line>
+      <line x1="8" y1="60" x2="112" y2="60" stroke="#C9A24E" stroke-width="0.5" stroke-opacity="0.2"></line>
+      <line x1="22" y1="22" x2="98" y2="98" stroke="#C9A24E" stroke-width="0.5" stroke-opacity="0.15"></line>
+      <line x1="98" y1="22" x2="22" y2="98" stroke="#C9A24E" stroke-width="0.5" stroke-opacity="0.15"></line>
+      <polygon points="60,14 69,45 102,45 76,63 86,95 60,76 34,95 44,63 18,45 51,45" stroke="#C9A24E" stroke-width="0.6" stroke-opacity="0.3" fill="none"></polygon>
+    </svg>
+  </div>
+
+  <!-- Main content container -->
+  <div class="about-intro-container">
+
+    <!-- Text block -->
+    <div class="about-intro-text-block">
+      <div class="about-intro-eyebrow">
+        <span class="about-intro-rule-left" aria-hidden="true"></span>
+        <span class="about-intro-eyebrow-text">Intuitive Healer &amp; Spiritual Guide</span>
+        <span class="about-intro-rule-right" aria-hidden="true"></span>
+      </div>
+
+      <h1 class="about-intro-heading">Meet Toni Love —<br>Called to Guide, Heal &amp; Illuminate</h1>
+
+      <div class="about-intro-gold-sep" aria-hidden="true"></div>
+
+      <p class="about-intro-lead">Toni Love is a Holy Spirit-led intuitive healer and sacred guide whose calling was born from a deep, personal encounter with divine love. Through angelic guidance, soul healing, past life insight, and energy healing, she creates a safe and luminous space where truth is heard, wounds are released, and the soul remembers its purpose.</p>
+
+      <p class="about-intro-body">Rooted in her connection to God, Holy Spirit, and Yeshua, Toni's work is not about religion — it is about relationship. Every session is a sacred encounter, a moment of divine clarity where you are seen, heard, and gently guided back to the peace and purpose that was always yours. Whether you are seeking answers, healing from the past, or simply longing to feel connected to something greater, Toni meets you exactly where you are — with compassion, wisdom, and unwavering love.</p>
+
+      <p class="about-intro-body">As a <em>milford spiritual center</em> for seekers across the world, The Sacred Seer offers a sanctuary without walls — a place of spiritual renewal and awakening available to you wherever you are on your journey.</p>
+
+      <div class="about-intro-signature" aria-hidden="true">
+        <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 180 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="180" height="48">
+          <path d="M10,38 Q30,10 55,28 T90,22 Q115,14 130,30 T170,20" stroke="#C9A24E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.6"></path>
+          <path d="M20,44 Q50,36 90,40 Q130,44 160,38" stroke="#C9A24E" stroke-width="0.8" fill="none" stroke-linecap="round" stroke-opacity="0.35"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Panoramic image card -->
+    <figure class="about-intro-image-card">
+      <!-- Decorative feather wing left -->
+      <div class="about-intro-wing-left" aria-hidden="true">
+        <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 160 320" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="320">
+          <path d="M140,10 Q60,40 40,100 Q20,160 50,220 Q70,270 100,300 Q60,260 70,200 Q80,150 110,110 Q130,80 140,10Z" fill="#EFD9A7" fill-opacity="0.18"></path>
+          <path d="M130,20 Q55,55 38,115 Q22,172 52,228" stroke="#C9A24E" stroke-width="0.6" fill="none" stroke-opacity="0.2"></path>
+          <path d="M120,35 Q52,68 36,128 Q22,185 54,236" stroke="#C9A24E" stroke-width="0.5" fill="none" stroke-opacity="0.15"></path>
+          <path d="M110,50 Q50,80 34,140 Q22,198 56,244" stroke="#C9A24E" stroke-width="0.4" fill="none" stroke-opacity="0.12"></path>
+        </svg>
+      </div>
+
+      <!-- Decorative corner ornaments -->
+      <div class="about-intro-corner about-intro-corner--tl" aria-hidden="true">
+        <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+          <path d="M2,38 L2,2 L38,2" stroke="#C9A24E" stroke-width="1.2" fill="none" stroke-opacity="0.5"></path>
+          <circle cx="2" cy="2" r="2.5" fill="#C9A24E" fill-opacity="0.4"></circle>
+        </svg>
+      </div>
+      <div class="about-intro-corner about-intro-corner--tr" aria-hidden="true">
+        <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+          <path d="M38,38 L38,2 L2,2" stroke="#C9A24E" stroke-width="1.2" fill="none" stroke-opacity="0.5"></path>
+          <circle cx="38" cy="2" r="2.5" fill="#C9A24E" fill-opacity="0.4"></circle>
+        </svg>
+      </div>
+      <div class="about-intro-corner about-intro-corner--bl" aria-hidden="true">
+        <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+          <path d="M2,2 L2,38 L38,38" stroke="#C9A24E" stroke-width="1.2" fill="none" stroke-opacity="0.5"></path>
+          <circle cx="2" cy="38" r="2.5" fill="#C9A24E" fill-opacity="0.4"></circle>
+        </svg>
+      </div>
+      <div class="about-intro-corner about-intro-corner--br" aria-hidden="true">
+        <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+          <path d="M38,2 L38,38 L2,38" stroke="#C9A24E" stroke-width="1.2" fill="none" stroke-opacity="0.5"></path>
+          <circle cx="38" cy="38" r="2.5" fill="#C9A24E" fill-opacity="0.4"></circle>
+        </svg>
+      </div>
+
+      <div class="about-intro-image-wrap">
+        <img loading="eager" fetchpriority="high" data-placeholder="about-intro-image-1" data-context="Wide panoramic photograph of intuitive spiritual healer Toni Love — a warm, radiant woman in flowing soft white or cream attire, seated or standing in a serene sanctuary-like space filled with soft golden light, candles, crystals, feathers, and celestial decor. The atmosphere is heavenly, angelic, and healing — evoking divine peace and spiritual wisdom. Soft bokeh background with warm gold and celestial blue light tones. Editorial, luxurious, emotionally warm." width="1100" height="480" src="/assets/site-about-intro-image-1.webp" alt="Toni Love, intuitive healer and spiritual guide, in her sacred sanctuary space">
+      </div>
+
+      <figcaption class="about-intro-caption">
+        <span class="about-intro-caption-icon" aria-hidden="true">✦</span>
+        Toni Love — Holy Spirit-Led Intuitive Healer &amp; Sacred Guide
+        <span class="about-intro-caption-icon" aria-hidden="true">✦</span>
+      </figcaption>
+    </figure>
+
+  </div>
+
+  <!-- Bottom sacred geometry divider -->
+  <div class="about-intro-bottom-divider" aria-hidden="true">
+    <div class="about-intro-geo-line">
+      <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 900 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="900" height="28" preserveAspectRatio="xMidYMid meet">
+        <!-- Left fade line -->
+        <line x1="0" y1="14" x2="370" y2="14" stroke="url(#fadeLeft)" stroke-width="0.8"></line>
+        <!-- Right fade line -->
+        <line x1="530" y1="14" x2="900" y2="14" stroke="url(#fadeRight)" stroke-width="0.8"></line>
+        <!-- Center sacred geometry motif -->
+        <g transform="translate(450,14)">
+          <circle cx="0" cy="0" r="10" stroke="#C9A24E" stroke-width="0.8" fill="none" stroke-opacity="0.5"></circle>
+          <circle cx="0" cy="0" r="5" stroke="#C9A24E" stroke-width="0.8" fill="none" stroke-opacity="0.5"></circle>
+          <circle cx="0" cy="0" r="1.5" fill="#C9A24E" fill-opacity="0.5"></circle>
+          <line x1="-18" y1="0" x2="-12" y2="0" stroke="#C9A24E" stroke-width="0.8" stroke-opacity="0.4"></line>
+          <line x1="12" y1="0" x2="18" y2="0" stroke="#C9A24E" stroke-width="0.8" stroke-opacity="0.4"></line>
+          <line x1="-8.66" y1="-5" x2="-5.77" y2="-3.33" stroke="#C9A24E" stroke-width="0.6" stroke-opacity="0.3"></line>
+          <line x1="5.77" y1="3.33" x2="8.66" y2="5" stroke="#C9A24E" stroke-width="0.6" stroke-opacity="0.3"></line>
+          <line x1="8.66" y1="-5" x2="5.77" y2="-3.33" stroke="#C9A24E" stroke-width="0.6" stroke-opacity="0.3"></line>
+          <line x1="-5.77" y1="3.33" x2="-8.66" y2="5" stroke="#C9A24E" stroke-width="0.6" stroke-opacity="0.3"></line>
+          <!-- Small diamonds flanking -->
+          <path d="M-35,0 L-30,-5 L-25,0 L-30,5 Z" stroke="#C9A24E" stroke-width="0.7" fill="none" stroke-opacity="0.4"></path>
+          <path d="M25,0 L30,-5 L35,0 L30,5 Z" stroke="#C9A24E" stroke-width="0.7" fill="none" stroke-opacity="0.4"></path>
+        </g>
+        <defs>
+          <linearGradient id="fadeLeft" x1="0" y1="0" x2="370" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C9A24E" stop-opacity="0"></stop>
+            <stop offset="100%" stop-color="#C9A24E" stop-opacity="0.4"></stop>
+          </linearGradient>
+          <linearGradient id="fadeRight" x1="530" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C9A24E" stop-opacity="0.4"></stop>
+            <stop offset="100%" stop-color="#C9A24E" stop-opacity="0"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+</section>
+
+<section class="about-biography-section" data-layout-spec="About-biography">
+
+  <!-- Subtle background sacred geometry decoration -->
+  <div class="bio-bg-decoration" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="300" cy="300" r="280" stroke="#C9A24E" stroke-width="0.8" opacity="0.06"></circle>
+      <circle cx="300" cy="300" r="200" stroke="#C9A24E" stroke-width="0.8" opacity="0.06"></circle>
+      <circle cx="300" cy="300" r="120" stroke="#C9A24E" stroke-width="0.8" opacity="0.06"></circle>
+      <line x1="300" y1="20" x2="300" y2="580" stroke="#C9A24E" stroke-width="0.6" opacity="0.05"></line>
+      <line x1="20" y1="300" x2="580" y2="300" stroke="#C9A24E" stroke-width="0.6" opacity="0.05"></line>
+      <line x1="60" y1="60" x2="540" y2="540" stroke="#C9A24E" stroke-width="0.6" opacity="0.04"></line>
+      <line x1="540" y1="60" x2="60" y2="540" stroke="#C9A24E" stroke-width="0.6" opacity="0.04"></line>
+    </svg>
+  </div>
+
+  <div class="bio-container">
+
+    <!-- IMAGE COLUMN -->
+    <div class="bio-image-column">
+      <div class="bio-image-stack">
+
+        <!-- Gold frame accent -->
+        <div class="bio-frame-accent" aria-hidden="true"></div>
+
+        <!-- Main tall portrait -->
+        <figure class="bio-main-image-wrap">
+          <img loading="lazy" decoding="async" data-placeholder="about-biography-image-1" data-context="Warm editorial portrait of Toni Love, a compassionate and radiant African-American spiritual guide and intuitive healer, photographed in soft natural window light. She wears flowing white or cream-toned fabric with subtle golden jewelry. Background is softly blurred — cream walls, candles, or a serene sacred space with feathers and crystals. Expression is warm, wise, and deeply peaceful. Soft-focus photography style, luminous skin, gentle smile, spiritual presence. Editorial spiritual lifestyle photography." width="480" height="640" src="/assets/site-about-biography-image-1.webp" alt="Toni Love, intuitive healer and spiritual guide of The Sacred Seer">
+          <!-- Subtle gold overlay glow -->
+          <div class="bio-image-glow" aria-hidden="true"></div>
+        </figure>
+
+        <!-- Secondary peek tile -->
+        <figure class="bio-secondary-image-wrap">
+          <img loading="lazy" decoding="async" data-placeholder="about-biography-image-2" data-context="Close-up detail of a sacred spiritual altar or healing space: soft candlelight, rose quartz crystals, white feathers, dried flowers, an open journal with golden pen, and a small angelic figurine. Warm cream and gold tones. Soft bokeh background. Ethereal, luxurious, and spiritually intentional atmosphere. Flat-lay or slightly angled lifestyle photography for a spiritual healing brand." width="220" height="220" src="/assets/site-about-biography-image-2.webp" alt="Sacred healing altar with crystals, feathers, and candles">
+        </figure>
+
+      </div>
+    </div>
+
+    <!-- CONTENT COLUMN -->
+    <div class="bio-content-column">
+
+      <!-- Eyebrow label -->
+      <p class="bio-eyebrow">Meet Your Guide</p>
+
+      <!-- Gold rule -->
+      <div class="bio-gold-rule" aria-hidden="true"></div>
+
+      <h2 class="bio-heading">A Sacred Path, Walked With Love</h2>
+
+      <p class="bio-body">Toni Love is an intuitive healer, Holy Spirit-led reader, and compassionate guide whose gifts were not chosen — they were given. For years, Toni walked a path of deep spiritual seeking, moving through seasons of healing, loss, and divine awakening, until she could no longer ignore the sacred calling placed upon her heart. Today, as the founder of The Sacred Seer, she offers what she once desperately needed herself: clarity, comfort, and connection to the divine.</p>
+
+      <p class="bio-body">Guided by the Holy Spirit, Toni delivers angelic messages, soul remembrance support, past life insight, and energy healing with a precision and warmth that her clients describe as life-changing. Her work is rooted in her relationship with God, Yeshua, and the angelic realm — not in doctrine or ritual, but in authentic, living connection. As a woman-owned spiritual practice, The Sacred Seer stands as a sanctuary for those who are ready to awaken, remember, and return to wholeness.</p>
+
+      <p class="bio-body">Whether you are navigating grief, seeking direction, longing for emotional clarity, or simply feeling called to go deeper — Toni meets you exactly where you are. Her sessions are infused with discernment, unconditional love, and a sacred presence that holds space for your soul's most honest questions. This is not a church. This is a divine encounter.</p>
+
+      <!-- Sub-block: Spiritual Approach -->
+      <div class="bio-approach-block">
+        <div class="bio-approach-icon" aria-hidden="true">
+          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <path d="M20 4 L22.5 14 L33 11 L26 19 L33 27 L22.5 24 L20 34 L17.5 24 L7 27 L14 19 L7 11 L17.5 14 Z" stroke="currentColor" stroke-width="1.2" fill="none"></path>
+            <circle cx="20" cy="19" r="3" fill="currentColor" opacity="0.4"></circle>
+          </svg>
+        </div>
+        <div class="bio-approach-content">
+          <h3 class="bio-approach-heading">Toni's Spiritual Approach</h3>
+          <p class="bio-approach-text">Every session is Holy Spirit-led, angel-supported, and deeply personal. Toni brings together intuitive reading, soul-level healing, and compassionate guidance to create a sacred space where transformation is not just possible — it is expected. Her practice honors your unique divine journey with authenticity, discernment, and love.</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <a href="/contact" class="bio-cta-btn">Book a Sacred Session</a>
+
+    </div>
+  </div>
+
+  <!-- Bottom torn-paper divider transitioning to next section (cream/light) -->
+  <div class="bio-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,70 L0,32 Q30,28 60,34 T120,30 Q160,26 200,33 T280,29 Q320,33 360,28 T440,32 Q480,28 520,34 T600,30 Q640,26 680,33 T760,29 Q800,33 840,28 T920,32 Q960,28 1000,34 T1080,30 Q1120,26 1160,33 T1240,29 Q1300,33 1360,28 T1440,32 L1440,70 Z" fill="#FDFAF5"></path>
+    </svg>
+  </div>
+
+</section>
+
+<section class="about-values-section" data-layout-spec="About-values">
+  <!-- Decorative sacred geometry background -->
+  <div class="about-values-bg-decoration" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" class="about-values-geo-svg">
+      <circle cx="400" cy="400" r="320" fill="none" stroke="rgba(201,162,78,0.06)" stroke-width="1"></circle>
+      <circle cx="400" cy="400" r="240" fill="none" stroke="rgba(201,162,78,0.05)" stroke-width="1"></circle>
+      <circle cx="400" cy="400" r="160" fill="none" stroke="rgba(201,162,78,0.04)" stroke-width="1"></circle>
+      <polygon points="400,80 680,560 120,560" fill="none" stroke="rgba(201,162,78,0.05)" stroke-width="1"></polygon>
+      <polygon points="400,720 120,240 680,240" fill="none" stroke="rgba(201,162,78,0.05)" stroke-width="1"></polygon>
+    </svg>
+  </div>
+
+  <div class="about-values-container">
+    <!-- Section intro -->
+    <div class="about-values-intro">
+      <div class="about-values-eyebrow">Our Sacred Commitments</div>
+      <h2 class="about-values-heading">The Principles That Guide Every Reading</h2>
+      <div class="about-values-gold-rule" aria-hidden="true"></div>
+      <p class="about-values-subtext">At The Sacred Seer, every session is held within a container of divine love, spiritual integrity, and compassionate presence — a true spiritual renewal center for your soul's journey.</p>
+    </div>
+
+    <!-- Values grid -->
+    <div class="about-values-grid">
+
+      <!-- Card 1: Compassionate Support -->
+      <article class="about-values-card">
+        <div class="about-values-card-icon-wrap">
+          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40" aria-label="Heart icon representing compassionate support">
+            <path d="M24 40s-16-10-16-22a10 10 0 0 1 16-8 10 10 0 0 1 16 8c0 12-16 22-16 22z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"></path>
+            <path d="M17 20c0-3.3 2.7-6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"></path>
+          </svg>
+        </div>
+        <div class="about-values-card-content">
+          <h3 class="about-values-card-title">Compassionate Support</h3>
+          <p class="about-values-card-text">Toni holds every soul with tenderness and grace, creating an emotionally safe space where you are seen, heard, and honored without judgment. You are never alone on this sacred path.</p>
+        </div>
+        <div class="about-values-card-glow" aria-hidden="true"></div>
+      </article>
+
+      <!-- Card 2: Holy Spirit Discernment -->
+      <article class="about-values-card">
+        <div class="about-values-card-icon-wrap">
+          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40" aria-label="Dove icon representing Holy Spirit discernment">
+            <path d="M8 28c4-8 12-12 20-10 4 1 8 4 10 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"></path>
+            <path d="M38 26c2-2 4-2 6-1-2 4-6 7-10 8l-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+            <path d="M24 36c-4 4-10 6-16 4 2-6 6-10 12-12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"></path>
+            <circle cx="30" cy="18" r="2" fill="currentColor"></circle>
+          </svg>
+        </div>
+        <div class="about-values-card-content">
+          <h3 class="about-values-card-title">Holy Spirit Discernment</h3>
+          <p class="about-values-card-text">Every reading is surrendered to the Holy Spirit, Yeshua, and divine angelic guidance. Toni does not speak from ego — she listens, receives, and delivers messages rooted in divine truth and clarity.</p>
+        </div>
+        <div class="about-values-card-glow" aria-hidden="true"></div>
+      </article>
+
+      <!-- Card 3: Healing Presence -->
+      <article class="about-values-card">
+        <div class="about-values-card-icon-wrap">
+          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40" aria-label="Radiant light icon representing healing presence">
+            <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="1.5" fill="none"></circle>
+            <line x1="24" y1="6" x2="24" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="24" y1="36" x2="24" y2="42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="6" y1="24" x2="12" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="36" y1="24" x2="42" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="10.1" y1="10.1" x2="14.3" y2="14.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="33.7" y1="33.7" x2="37.9" y2="37.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="37.9" y1="10.1" x2="33.7" y2="14.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="14.3" y1="33.7" x2="10.1" y2="37.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+          </svg>
+        </div>
+        <div class="about-values-card-content">
+          <h3 class="about-values-card-title">Healing Presence</h3>
+          <p class="about-values-card-text">Soul healing is woven into every interaction. Whether through energy work, past life insight, or angelic messages, Toni's presence channels divine light that soothes, restores, and awakens your spirit.</p>
+        </div>
+        <div class="about-values-card-glow" aria-hidden="true"></div>
+      </article>
+
+      <!-- Card 4: Authentic Soul Guidance -->
+      <article class="about-values-card">
+        <div class="about-values-card-icon-wrap">
+          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40" aria-label="Star compass icon representing authentic soul guidance">
+            <polygon points="24,4 27,20 44,24 27,28 24,44 21,28 4,24 21,20" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"></polygon>
+            <circle cx="24" cy="24" r="3" fill="currentColor" opacity="0.4"></circle>
+          </svg>
+        </div>
+        <div class="about-values-card-content">
+          <h3 class="about-values-card-title">Authentic Soul Guidance</h3>
+          <p class="about-values-card-text">Toni honors your free will above all. Guidance is offered with honesty, love, and divine respect — never fear-based, always empowering. You leave each session with clarity, confidence, and a deeper trust in your own divine path.</p>
+        </div>
+        <div class="about-values-card-glow" aria-hidden="true"></div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- Bottom divider: celestial blue gradient band with gold arc -->
+  <div class="about-values-divider-wrapper" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Celestial blue gradient band fills the bottom -->
+      <defs>
+        <linearGradient id="valsDividerGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(175,207,245,0)"></stop>
+          <stop offset="100%" stop-color="rgba(34,50,71,1)"></stop>
+        </linearGradient>
+        <linearGradient id="valsArcGold" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="rgba(201,162,78,0)"></stop>
+          <stop offset="30%" stop-color="rgba(201,162,78,0.55)"></stop>
+          <stop offset="50%" stop-color="rgba(239,217,167,0.85)"></stop>
+          <stop offset="70%" stop-color="rgba(201,162,78,0.55)"></stop>
+          <stop offset="100%" stop-color="rgba(201,162,78,0)"></stop>
+        </linearGradient>
+      </defs>
+      <path d="M0,100 L0,48 Q300,20 600,38 T1200,48 L1200,100 Z" fill="#F5F0E8"></path>
+      <!-- Gold arc line -->
+      <path d="M200,62 Q600,28 1000,62" fill="#F5F0E8" stroke="url(#valsArcGold)" stroke-width="1.2"></path>
+    </svg>
+  </div>
+</section>
+
+<section class="about-process-section" data-layout-spec="About-process">
+  <!-- Decorative background dots -->
+  <div class="about-process-bg-pattern" aria-hidden="true"></div>
+
+  <!-- Section Header -->
+  <div class="about-process-container">
+    <div class="about-process-header">
+      <span class="about-process-eyebrow">Your Sacred Journey</span>
+      <h2 class="about-process-title">What to Expect When You Work With Toni</h2>
+      <div class="about-process-title-rule" aria-hidden="true"></div>
+      <p class="about-process-subtitle">Each session is thoughtfully designed to bring you peace, confirmation, healing, and the next-step clarity your soul has been seeking. Here is how your journey unfolds.</p>
+    </div>
+
+    <!-- Steps Grid -->
+    <div class="about-process-steps">
+
+      <!-- Step 1 -->
+      <article class="about-process-step">
+        <div class="about-process-step-top">
+          <div class="about-process-step-number" aria-label="Step 1">01</div>
+          <div class="about-process-step-icon" aria-hidden="true">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 3 C10 3 4 9 4 18 C4 27 10 33 18 33 C26 33 32 27 32 18 C32 9 26 3 18 3Z"></path>
+              <path d="M12 18 L16 22 L24 14"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="about-process-step-body">
+          <h3 class="about-process-step-title">Reach Out &amp; Connect</h3>
+          <p class="about-process-step-desc">Begin by reaching out through the contact page or booking link. Share a little about what you are seeking — whether it is spiritual clarity, soul healing, angelic guidance, or confirmation on your path. Toni will hold your inquiry with care and compassion.</p>
+        </div>
+      </article>
+
+      <!-- Connector -->
+      <div class="about-process-connector" aria-hidden="true">
+        <div class="about-process-connector-line"></div>
+        <div class="about-process-connector-dot"></div>
+      </div>
+
+      <!-- Step 2 -->
+      <article class="about-process-step">
+        <div class="about-process-step-top">
+          <div class="about-process-step-number" aria-label="Step 2">02</div>
+          <div class="about-process-step-icon" aria-hidden="true">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="7" width="26" height="22" rx="3"></rect>
+              <path d="M5 13 L31 13"></path>
+              <path d="M12 4 L12 10"></path>
+              <path d="M24 4 L24 10"></path>
+              <path d="M11 20 L16 20"></path>
+              <path d="M11 25 L20 25"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="about-process-step-body">
+          <h3 class="about-process-step-title">Choose Your Session</h3>
+          <p class="about-process-step-desc">Browse the offerings and select the session that resonates with your soul's current need — from Holy Spirit-led intuitive readings and angel messages to past life insight, energy healing, or soul guidance. Every service is lovingly tailored to meet you exactly where you are.</p>
+        </div>
+      </article>
+
+      <!-- Connector -->
+      <div class="about-process-connector" aria-hidden="true">
+        <div class="about-process-connector-line"></div>
+        <div class="about-process-connector-dot"></div>
+      </div>
+
+      <!-- Step 3 -->
+      <article class="about-process-step">
+        <div class="about-process-step-top">
+          <div class="about-process-step-number" aria-label="Step 3">03</div>
+          <div class="about-process-step-icon" aria-hidden="true">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="18" r="13"></circle>
+              <path d="M13 18 Q15 12 18 18 Q21 24 23 18"></path>
+              <circle cx="11" cy="18" r="1.5" fill="currentColor" stroke="none"></circle>
+              <circle cx="25" cy="18" r="1.5" fill="currentColor" stroke="none"></circle>
+            </svg>
+          </div>
+        </div>
+        <div class="about-process-step-body">
+          <h3 class="about-process-step-title">Receive Your Guidance</h3>
+          <p class="about-process-step-desc">Sessions are held via Google Meet or delivered remotely, allowing you to receive divine guidance from the comfort of your own sacred space. Toni connects through the Holy Spirit to bring you messages, healing energy, and insight with warmth, clarity, and love.</p>
+        </div>
+      </article>
+
+      <!-- Connector -->
+      <div class="about-process-connector" aria-hidden="true">
+        <div class="about-process-connector-line"></div>
+        <div class="about-process-connector-dot"></div>
+      </div>
+
+      <!-- Step 4 -->
+      <article class="about-process-step">
+        <div class="about-process-step-top">
+          <div class="about-process-step-number" aria-label="Step 4">04</div>
+          <div class="about-process-step-icon" aria-hidden="true">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 5 L20.5 13 L29 13 L22.5 18 L25 26 L18 21 L11 26 L13.5 18 L7 13 L15.5 13 Z"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="about-process-step-body">
+          <h3 class="about-process-step-title">Integrate &amp; Awaken</h3>
+          <p class="about-process-step-desc">After your session, Toni encourages gentle reflection and integration of the insights received. You will leave with peace in your heart, confirmation of your path, and clear next steps for your spiritual renewal — carrying the light of divine love forward into your daily life.</p>
+        </div>
+      </article>
+
+    </div>
+    <!-- End Steps -->
+
+    <!-- Bottom CTA note -->
+    <div class="about-process-cta-note">
+      <div class="about-process-cta-rule" aria-hidden="true"></div>
+      <p class="about-process-cta-text">Ready to begin your sacred journey? Sessions are offered online, welcoming souls from every corner of the world seeking spiritual renewal and divine connection.</p>
+      <a href="/contact" class="about-process-cta-btn btn-primary">Book a Session</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom divider: soft light fade into next section -->
+  <div class="about-process-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,60 L0,30 Q150,20 300,28 T600,22 Q750,18 900,26 T1200,20 L1200,60 Z" fill="#FDFAF5"></path>
+    </svg>
+  </div>
+</section>
+
+<section class="about-reviews-section" data-layout-spec="About-reviews">
+  <!-- Decorative background elements -->
+  <div class="about-reviews-section__bg-dots" aria-hidden="true"></div>
+  <div class="about-reviews-section__gold-line" aria-hidden="true"></div>
+
+  <div class="about-reviews-section__container">
+
+    <!-- Section Header -->
+    <header class="about-reviews-section__header">
+      <span class="about-reviews-section__eyebrow">Sacred Testimonials</span>
+      <h2 class="about-reviews-section__title">Words From Those Who Have Been Seen</h2>
+      <p class="about-reviews-section__subtitle">Every soul that walks this path leaves transformed. These are their words — offered with gratitude and love.</p>
+    </header>
+
+    <!-- Asymmetric Reviews Layout -->
+    <div class="about-reviews-section__grid">
+
+      <!-- Featured (Large) Testimonial Card -->
+      <article class="about-reviews-section__card about-reviews-section__card--featured">
+        <div class="about-reviews-section__quote-mark" aria-hidden="true">
+          <svg data-no-icon-edit="true" aria-hidden="true" width="48" height="36" viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 36V21.6C0 9.6 7.2 2.4 21.6 0L24 4.8C16.8 6.4 13.2 10.4 12 16.8H21.6V36H0ZM26.4 36V21.6C26.4 9.6 33.6 2.4 48 0L50.4 4.8C43.2 6.4 39.6 10.4 38.4 16.8H48V36H26.4Z" fill="#C9A24E" fill-opacity="0.22"></path>
+          </svg>
+        </div>
+        <blockquote class="about-reviews-section__quote">
+          <p>"I came to Toni at the lowest point of my life — uncertain, grieving, and desperate for clarity. From the very first moment, I felt completely held by something greater than any human conversation. Toni didn't just read my energy; she saw my soul. She spoke words that only God and I could have known, and in that sacred space, I felt the Holy Spirit move through every word she shared. I left that session with a peace that surpassed all understanding. My life has genuinely changed. Toni is a true vessel of divine love."</p>
+        </blockquote>
+        <footer class="about-reviews-section__reviewer">
+          <div class="about-reviews-section__reviewer-avatar">
+            <span aria-hidden="true">M</span>
+          </div>
+          <div class="about-reviews-section__reviewer-info">
+            <strong class="about-reviews-section__reviewer-name">Melissa R.</strong>
+            <span class="about-reviews-section__reviewer-label">Soul Healing Session</span>
+          </div>
+          <div class="about-reviews-section__stars" aria-label="5 out of 5 stars">
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+          </div>
+        </footer>
+        <!-- Decorative feather motif -->
+        <svg class="about-reviews-section__feather-deco" data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 80 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40 0 C60 20, 75 50, 70 80 C65 110, 50 130, 40 160 C30 130, 15 110, 10 80 C5 50, 20 20, 40 0Z" fill="#C9A24E" fill-opacity="0.06"></path>
+          <path d="M40 10 C55 28, 68 55, 64 82 C60 108, 47 127, 40 150" stroke="#C9A24E" stroke-opacity="0.12" stroke-width="1" fill="none"></path>
+          <path d="M40 30 L65 65" stroke="#C9A24E" stroke-opacity="0.08" stroke-width="0.8"></path>
+          <path d="M40 50 L68 75" stroke="#C9A24E" stroke-opacity="0.08" stroke-width="0.8"></path>
+          <path d="M40 70 L66 88" stroke="#C9A24E" stroke-opacity="0.08" stroke-width="0.8"></path>
+          <path d="M40 30 L15 65" stroke="#C9A24E" stroke-opacity="0.08" stroke-width="0.8"></path>
+          <path d="M40 50 L12 75" stroke="#C9A24E" stroke-opacity="0.08" stroke-width="0.8"></path>
+          <path d="M40 70 L14 88" stroke="#C9A24E" stroke-opacity="0.08" stroke-width="0.8"></path>
+        </svg>
+      </article>
+
+      <!-- Supporting Testimonials Column -->
+      <div class="about-reviews-section__supporting">
+
+        <!-- Supporting Card 1 -->
+        <article class="about-reviews-section__card about-reviews-section__card--supporting">
+          <div class="about-reviews-section__quote-mark" aria-hidden="true">
+            <svg data-no-icon-edit="true" aria-hidden="true" width="32" height="24" viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 36V21.6C0 9.6 7.2 2.4 21.6 0L24 4.8C16.8 6.4 13.2 10.4 12 16.8H21.6V36H0ZM26.4 36V21.6C26.4 9.6 33.6 2.4 48 0L50.4 4.8C43.2 6.4 39.6 10.4 38.4 16.8H48V36H26.4Z" fill="#C9A24E" fill-opacity="0.22"></path>
+            </svg>
+          </div>
+          <blockquote class="about-reviews-section__quote">
+            <p>"Toni confirmed things about my past life that I had been carrying silently for years. I finally understand why I kept repeating certain patterns. This was the divine timing I had been praying for. I felt completely seen, without judgment — only compassion and light."</p>
+          </blockquote>
+          <footer class="about-reviews-section__reviewer">
+            <div class="about-reviews-section__reviewer-avatar about-reviews-section__reviewer-avatar--blue">
+              <span aria-hidden="true">J</span>
+            </div>
+            <div class="about-reviews-section__reviewer-info">
+              <strong class="about-reviews-section__reviewer-name">Janelle T.</strong>
+              <span class="about-reviews-section__reviewer-label">Past Life Insight Session</span>
+            </div>
+            <div class="about-reviews-section__stars" aria-label="5 out of 5 stars">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+            </div>
+          </footer>
+        </article>
+
+        <!-- Supporting Card 2 -->
+        <article class="about-reviews-section__card about-reviews-section__card--supporting">
+          <div class="about-reviews-section__quote-mark" aria-hidden="true">
+            <svg data-no-icon-edit="true" aria-hidden="true" width="32" height="24" viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 36V21.6C0 9.6 7.2 2.4 21.6 0L24 4.8C16.8 6.4 13.2 10.4 12 16.8H21.6V36H0ZM26.4 36V21.6C26.4 9.6 33.6 2.4 48 0L50.4 4.8C43.2 6.4 39.6 10.4 38.4 16.8H48V36H26.4Z" fill="#C9A24E" fill-opacity="0.22"></path>
+            </svg>
+          </div>
+          <blockquote class="about-reviews-section__quote">
+            <p>"The angelic guidance Toni channeled brought me to tears — tears of relief, not sadness. She spoke directly to the wounds I had never voiced. I walked away feeling lighter, anchored in faith, and deeply loved by something divine. I recommend her to every seeking soul."</p>
+          </blockquote>
+          <footer class="about-reviews-section__reviewer">
+            <div class="about-reviews-section__reviewer-avatar about-reviews-section__reviewer-avatar--gold">
+              <span aria-hidden="true">S</span>
+            </div>
+            <div class="about-reviews-section__reviewer-info">
+              <strong class="about-reviews-section__reviewer-name">Serena W.</strong>
+              <span class="about-reviews-section__reviewer-label">Angelic Guidance Reading</span>
+            </div>
+            <div class="about-reviews-section__stars" aria-label="5 out of 5 stars">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+            </div>
+          </footer>
+        </article>
+
+      </div>
+      <!-- end supporting column -->
+
+    </div>
+    <!-- end grid -->
+
+    <!-- Concluding Invitation -->
+    <div class="about-reviews-section__cta-block">
+      <div class="about-reviews-section__divider-line" aria-hidden="true"></div>
+      <p class="about-reviews-section__cta-text">Your healing, clarity, and divine connection are waiting. When you are ready, Toni is here.</p>
+      <div class="about-reviews-section__cta-buttons">
+        <a href="/services" class="about-reviews-section__btn-primary">Explore Sacred Services</a>
+        <a href="/contact" class="about-reviews-section__btn-ghost">Begin Your Journey</a>
+      </div>
+    </div>
+
+  </div>
+  <!-- end container -->
+
+</section>
+  </main>
+  
+  <footer class="site-footer" aria-label="Site Footer"> <div class="footer-container"> <div class="footer-top"> <div class="footer-col footer-brand"> <img src="/assets/the-sacred-seer-toni-love-spiritual-services-logo.webp" alt="The Sacred Seer Toni Love" class="logo"> <p class="footer-tagline">Guiding souls toward clarity, healing, and divine alignment. Step into your sacred journey with compassion and light.</p> <div class="footer-social" aria-label="Social Media Links">    </div> </div> <div class="footer-col footer-links"> <h3 class="footer-heading">Quick Links</h3> <ul class="footer-nav"> <li><a href="/">Home</a></li> <li><a href="/about">About</a></li> <li><a href="/services">Services</a></li> <li><a href="/contact">Contact</a></li> </ul> </div> <div class="footer-col footer-contact-col"> <h3 class="footer-heading">Contact</h3> <ul class="footer-contact"> <li> <span class="contact-icon"><i class="fas fa-envelope"></i></span> <span class="contact-text"><a href="mailto:[business_email]">[business_email]</a></span> </li> <li> <span class="contact-icon"><i class="fas fa-phone"></i></span> <span class="contact-text"><a href="tel:[business_phone]">[business_phone]</a></span> </li> <li><a href="/"><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span> <span class="contact-text">[business_address]</span></a></li> </ul> </div> <div class="footer-col footer-hours-col"> <h3 class="footer-heading">Sacred Hours</h3> <ul class="footer-hours"> <li><a href="/"><span class="day">Mon – Fri</span><span class="time">9:00 AM – 7:00 PM</span></a></li> <li><a href="/"><span class="day">Saturday</span><span class="time">10:00 AM – 5:00 PM</span></a></li> <li><a href="/"><span class="day">Sunday</span><span class="time">Closed</span></a></li> </ul> <div class="footer-badge"><i class="fas fa-star"></i> Spiritual Guidance Available Online</div> </div> </div> <div class="footer-divider"></div> <div class="footer-bottom"> <p class="footer-copyright">© 2026 The Sacred Seer Toni Love. All rights reserved.</p> <div class="footer-legal"> <a href="/privacy">Privacy Policy</a> <span class="legal-sep" aria-hidden="true">·</span> <a href="/terms">Terms &amp; Conditions</a> <span class="legal-sep" aria-hidden="true">·</span> <a href="/accessibility">Accessibility</a> <span class="legal-sep" aria-hidden="true">·</span> <a href="https://zappy5.com" target="_blank" class="zappy-attribution">Generated by Zappy</a> </div> </div> </div> </footer>
+  
+  <a href="https://wa.me/[whatsapp_handle]" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <div data-integration="accessibility:toolbar"></div>
+
+    <script src="/script.js"></script>
+
+    <script id="zappy-mobile-submenu-script">
+    (function() {
+      function initMobileSubmenuToggles() {
+        if (window.innerWidth > 768) {
+          document.querySelectorAll('.mobile-submenu-toggle').forEach(function(btn) { btn.remove(); });
+          document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) { menu.classList.remove('mobile-expanded'); });
+          return;
+        }
+        var items = document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)');
+        items.forEach(function(li) {
+          if (li.querySelector('.mobile-submenu-toggle')) return;
+          var submenu = li.querySelector('.sub-menu');
+          var parentLink = li.querySelector(':scope > a');
+          if (!submenu || !parentLink) return;
+          var toggleBtn = document.createElement('button');
+          toggleBtn.className = 'mobile-submenu-toggle';
+          toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+          toggleBtn.setAttribute('type', 'button');
+          parentLink.insertAdjacentElement('afterend', toggleBtn);
+          toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+              if (menu !== submenu) { menu.classList.remove('mobile-expanded'); var t = menu.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }
+            });
+            submenu.classList.toggle('mobile-expanded');
+            toggleBtn.classList.toggle('expanded');
+          });
+        });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
+      else { initMobileSubmenuToggles(); }
+      var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
+      // Re-initialize when mobile menu becomes visible (MutationObserver)
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes') {
+            var target = mutation.target;
+            if (target.classList && (target.classList.contains('active') || target.classList.contains('open'))) {
+              setTimeout(initMobileSubmenuToggles, 100);
+            }
+          }
+        });
+      });
+      setTimeout(function() {
+        document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu, nav').forEach(function(menu) {
+          observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+        });
+      }, 500);
+    })();
+    </script>
+</body>
+</html>

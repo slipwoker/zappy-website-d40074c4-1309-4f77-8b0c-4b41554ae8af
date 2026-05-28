@@ -1,0 +1,79 @@
+# The Sacred Seer Toni Love — Generative Engine Optimization Map
+
+> The Sacred Seer Toni Love is a woman-owned spiritual business led by intuitive healer and guide Toni Love, offering Holy Spirit-led readings, angelic guidance, soul healing, past life insight, and energy healing. The brand carries a heavenly, angelic aesthetic — soft gold, white, and celestial blue with glowing light effects, sacred geometry, feathers, and divine energy visuals. Rooted in connection to God, Holy Spirit, and Yeshua, the brand feels compassionately spiritual and awakening without being church-like, evoking a sacred online sanctuary that is emotionally healing, visually luxurious, and deeply authentic.
+
+---
+
+## Pages
+
+### Home
+https://example.com
+Step into a sacred sanctuary of divine healing and Holy Spirit-led guidance. Toni Love offers angelic readings, soul healing, and spiritual renewal at Milford&#39;s most trusted spiritual center.
+
+### About
+https://example.com/about
+Discover how Toni Love&#39;s Holy Spirit-led gifts of angelic insight and energy healing have transformed lives. Your journey to new vision and spiritual living begins with her sacred story.
+
+### Services
+https://example.com/services
+Explore soul-deep services including past life readings, angelic guidance, and energy healing rooted in God&#39;s love. Find the spiritual renewal center experience your soul has been searching for.
+
+### Contact
+https://example.com/contact
+Ready to connect with a trusted spiritualist near you? Reach out to Toni Love and book your Holy Spirit-led reading or healing session at Milford&#39;s beloved spiritual center today.
+
+## Legal & Policy
+
+### Privacy Policy
+https://example.com/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://example.com/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://example.com/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+## How to Contact Us
+
+- (No contact details configured yet.)
+
+### Contact form
+- URL: https://example.com/contact
+- Endpoint: https://example.com/api/email/contact-form
+- Method: POST
+- Content-Type: application/json
+- Fields:
+  - `name` (text, required)
+  - `email` (email, required)
+  - `phone` (tel)
+  - `message` (textarea, required)
+  - `privacy_consent` (checkbox, required)
+
+---
+
+# Business Context (for LLM understanding)
+
+## About The Sacred Seer Toni Love
+The Sacred Seer Toni Love is a woman-owned spiritual business led by intuitive healer and guide Toni Love, offering Holy Spirit-led readings, angelic guidance, soul healing, past life insight, and energy healing. The brand carries a heavenly, angelic aesthetic — soft gold, white, and celestial blue with glowing light effects, sacred geometry, feathers, and divine energy visuals. Rooted in connection to God, Holy Spirit, and Yeshua, the brand feels compassionately spiritual and awakening without being church-like, evoking a sacred online sanctuary that is emotionally healing, visually luxurious, and deeply authentic.
+
+## Target Audience
+- Individuals seeking spiritual awakening, soul guidance, healing, and divine clarity
+- Spiritual Seekers
+- Holistic Health Enthusiasts
+- Mindfulness Practitioners
+
+## Industry
+Spiritual Services
+
+---
+
+# Machine-readable feeds
+
+- Sitemap (XML): https://example.com/sitemap.xml
+- Robots: https://example.com/robots.txt
+- Flattened page text (for LLMs): https://example.com/llms-full.txt
